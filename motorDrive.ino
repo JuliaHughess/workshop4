@@ -7,7 +7,7 @@ Servo rotServo;  // Continuous Rotation Servo (Pin 9)
 const int neutralPWM = 93;
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(9600); // Initialize serial communication for command input
   posServo.attach(11);     // Position Servo on Pin 11
   rotServo.attach(9);      // Rotation Servo on Pin 9
 
