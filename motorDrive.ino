@@ -16,7 +16,7 @@ void setup() {
     rotServo.write(neutralPWM);
     delay(20);
   }
-
+ // Serial instructions for user
   Serial.println("Ready!");
   Serial.println("Use:");
   Serial.println("P[angle]→ 0 to 180 for Position Servo)");
