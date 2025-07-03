@@ -55,6 +55,7 @@ void loop() {
         Serial.print(neutralPWM);
         Serial.println(")");
       } else {
+         // Map value from -100~100 to PWM 0~180 for speed control
         int pwm = map(value, -100, 100, 0, 180);
         rotServo.write(pwm);
         Serial.print("Rotation servo set to ");
