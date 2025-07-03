@@ -16,7 +16,7 @@ void setup() {
     rotServo.write(neutralPWM);
     delay(20);
   }
-
+ // Serial instructions for user
   Serial.println("Ready!");
   Serial.println("Use:");
   Serial.println("P[angle]→ 0 to 180 for Position Servo)");
@@ -24,6 +24,7 @@ void setup() {
 }
 
 void loop() {
+    // Check if there's incoming serial data
   if (Serial.available()) {
     char command = Serial.read();        // Read 'P' or 'R'
     delay(5);                             // Allow full input to buffer
@@ -54,6 +55,7 @@ void loop() {
         Serial.print(neutralPWM);
         Serial.println(")");
       } else {
+         // Map value from -100~100 to PWM 0~180 for speed control
         int pwm = map(value, -100, 100, 0, 180);
         rotServo.write(pwm);
         Serial.print("Rotation servo set to ");
