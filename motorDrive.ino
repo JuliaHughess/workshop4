@@ -24,6 +24,7 @@ void setup() {
 }
 
 void loop() {
+    // Check if there's incoming serial data
   if (Serial.available()) {
     char command = Serial.read();        // Read 'P' or 'R'
     delay(5);                             // Allow full input to buffer
